@@ -1,0 +1,18 @@
+@color-lite: #72a05c;
+@color-brand: #fff;
+@color-secondary-brand: #fff;
+@color-tertiary-brand: #f3f3f3;
+@color-border: #2b2e2a;
+
+.color-blue() {
+  background: @color-secondary-brand;
+  background: -moz-radial-gradient(center, ellipse cover, @color-secondary-brand 0%, @color-tertiary-brand 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, @color-secondary-brand), color-stop(100%, @color-tertiary-brand));
+  background: -webkit-radial-gradient(center, ellipse cover, @color-secondary-brand 0%, @color-tertiary-brand 100%);
+  background: -o-radial-gradient(center, ellipse cover, @color-secondary-brand 0%, @color-tertiary-brand 100%);
+  background: -ms-radial-gradient(center, ellipse cover, @color-secondary-brand 0%, @color-tertiary-brand 100%);
+  background: radial-gradient(ellipse at center, @color-secondary-brand 0%, @color-tertiary-brand 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-secondary-brand', endColorstr='@color-tertiary-brand', GradientType=1);
+  background: url('../images/mall.jpg') no-repeat 0 0 @color-secondary-brand;
+  background-size: 100% 100%;
+}

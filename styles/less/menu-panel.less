@@ -1,0 +1,83 @@
+.menu-panel {
+  .backface();
+  .menu-panel-container {
+    height: @full-height;
+    .menu-panel-content {
+      height: @full-height;
+      padding: 2px;
+      background: @color-lite;
+      .menu-panel-box {
+        position: relative;
+        height: @full-height;
+        border: 0 0 2px @color-border;
+        .option-box {
+          float: left;
+          width: @half-width;
+          height: @half-height;
+          background: @color-tertiary-brand;
+          border: 1px solid @color-border;
+          box-shadow: 0 0 5px @color-border inset;
+          &:active, &:hover {
+            background: @color-tertiary-brand;
+            background: -moz-radial-gradient(center, ellipse cover, @color-tertiary-brand 0%, @color-secondary-brand 100%);
+            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, @color-tertiary-brand), color-stop(100%, @color-secondary-brand));
+            background: -webkit-radial-gradient(center, ellipse cover, @color-tertiary-brand 0%, @color-secondary-brand 100%);
+            background: -o-radial-gradient(center, ellipse cover, @color-tertiary-brand 0%, @color-secondary-brand 100%);
+            background: -ms-radial-gradient(center, ellipse cover, @color-tertiary-brand 0%, @color-secondary-brand 100%);
+            background: radial-gradient(ellipse at center, @color-tertiary-brand 0%, @color-secondary-brand 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-tertiary-brand', endColorstr='@color-secondary-brand', GradientType=1);
+          }
+        }
+        .cart {
+          position: absolute;
+          top: 32%;
+          left: -87.5px;
+          height: 175px;
+          width: 175px;
+          margin-left: 50%;
+          background: @color-lite;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          -webkit-box-shadow: 0 0 2px;
+          box-shadow: 0 0 2px;
+          .cart-icon {
+            position: absolute;
+            top: 45px;
+            left: 25px;
+            width: @full-width;
+            height: @full-height;
+            background: url('../images/in-cart-menu.png') no-repeat 0 0 transparent;
+          }
+        }
+      }
+      .slide-button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: @color-lite;
+        width: 100px;
+        height: 100px;
+        margin-bottom: -50px;
+        margin-left: -50px;
+        display: inline-block;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+    }
+  }
+  height: @full-height;
+  width: @full-width;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transform: translate3d(0, -100%, 0);
+  -webkit-transform: translate3d(0, -100%, 0);
+  &.active {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
