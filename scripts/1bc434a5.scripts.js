@@ -1,0 +1,1 @@
+"use strict";angular.module("groceryListApp",["ngCookies","ngResource","ngSanitize"]),angular.module("groceryListApp").controller("MainCtrl",["$scope",function(a){a.awesomeThings=["HTML5 Boilerplate","AngularJS","Karma"]}]);
