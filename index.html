@@ -1,7 +1,43 @@
 <!doctype html><!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>
 <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><title></title><meta name="description" content=""><meta name="viewport" content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/dee1e038.main.css"><body ng-app="groceryListApp"><!--[if lt IE 7]>
+<html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><title></title><meta name="description" content=""><meta name="viewport" content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/dee1e038.main.css"></head><body ng-app="groceryListApp">
+
+<!-- Begin Templates -->
+<script type="text/ng-template" id="/views/add-new-list.html">
+<p>This is the add-new-list view.</p>
+</script>
+
+<script type="text/ng-template" id="/views/add-shopping-items.html">
+<div class="add-shopping-items"><div class="list-block" data-ng-if="!shopping.itemsEnabled" data-ui-keypress="{'enter':'shopping.createList()'}"><div class="list"><label class="item item-input item-floating-label"><span class="input-label">List Title</span><input type="text" data-ng-model="shopping.list.title" placeholder="enter a list title"></label><button data-ng-click="shopping.createList()" class="button button-block button-energized">Create List</button></div></div><div class="items-block" data-ng-if="shopping.itemsEnabled" data-ui-keypress="{'enter':'shopping.addItems()'}"><div class="item item-divider center">{{shopping.list.title}}</div><div class="list"><label class="item item-input item-floating-label"><span class="input-label">Add an item</span><input type="text" data-ng-model="shopping.itemTitle" placeholder="Item Name"></label><label class="item item-input item-floating-label"><span class="input-label">Quantity</span><input type="number" data-ng-model="shopping.quantity" placeholder="Enter a quantity"></label><label class="item item-input item-select"><div class="button-bar"><a class="button" data-ng-class="{'active':shopping.measure==='lb'}" data-ng-click="shopping.measure='lb'">Lb</a> <a class="button" data-ng-class="{'active':shopping.measure==='no'}" data-ng-click="shopping.measure='no'">No</a> <a class="button" data-ng-class="{'active':shopping.measure==='oz'}" data-ng-click="shopping.measure='oz'">Oz</a> <a class="button" data-ng-class="{'active':shopping.measure==='pack'}" data-ng-click="shopping.measure='pack'">Packs</a></div></label><button data-ng-click="shopping.addItems()" class="button button-block button-energized">Add item</button></div><div class="items-added" data-ng-if="shopping.items.length>0"><ul class="list"><li class="item" data-ng-repeat="item in shopping.items"><div class="clear-both"><span class="left">{{item.item}}</span> <span class="right">{{item.quantity}} {{item.measure}}</span></div></li></ul></div><button class="button button-block button-balanced" data-ng-click="shopping.saveList()">Save</button></div></div>
+</script>
+
+<script type="text/ng-template" id="/views/header.html">
+<div class="header-content"></div>
+</script>
+
+<script type="text/ng-template" id="/views/item-list.html">
+<div class="item-list"><ul class="list"><li class="item" data-ng-repeat="item in lists"><div class="clear-both"><span class="left">{{item.item}}</span> <span class="right">{{item.quantity}} {{item.measure}}</span></div></li></ul></div>
+</script>
+
+<script type="text/ng-template" id="/views/list-board.html">
+<div class="list-board"><ul class="list"><li class="item item-radio" data-ng-repeat="item in lists track by $index" data-ng-click="$location.path('main/list/{{$index}}')"><div class="shopping-item item-content">{{item.list.title}}</div></li></ul></div>
+</script>
+
+<script type="text/ng-template" id="/views/main.html">
+
+</script>
+
+<script type="text/ng-template" id="/views/menu-panel.html">
+<div class="menu-panel-content"><div class="menu-panel-box"><div data-ng-repeat="item in menu" class="option-box" data-ng-click="goState($index)"></div><div class="cart"><div class="cart-icon"></div></div></div><div class="slide-button" data-ng-click="$root.menuActive=true"></div></div>
+</script>
+
+<script type="text/ng-template" id="/views/register-online.html">
+<p>This is the register-online view.</p>
+</script>
+<!-- End Templates -->
+
+<!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]--><!-- Add your site or application content here --><div class="container" data-ng-view=""></div><!--
@@ -30,4 +66,4 @@
     ga('send', 'pageview');</script><!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
-<![endif]--><script src="scripts/68c2e3a3.vendor.js"></script><script src="scripts/c5bf1c37.scripts.js"></script>
+<![endif]--><script src="scripts/68c2e3a3.vendor.js"></script><script src="scripts/c864d8b4.scripts.js"></script></body></html>
