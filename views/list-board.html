@@ -1,1 +1,1 @@
-<div class="list-board"><ul class="list"><li class="item item-radio" data-ng-repeat="item in lists track by $index" data-ng-click="$state.go('main.list.items',{id:$index})"><div class="shopping-item item-content">{{item.list.title}}</div></li></ul></div>
+<div class="list-board"><ul class="list"><li class="item item-radio" data-ng-repeat="item in lists track by $index" data-ng-click="$location.path('main/list/{{$index}}')"><div class="shopping-item item-content">{{item.list.title}}</div></li></ul></div>
